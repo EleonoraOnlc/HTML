@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>
+	Список сотрудников ЭТП ОНЛАЙНКОНТРАКТ
+</title>
+<style type="text/css">
+	h1 { 
+	    font-size: 120%; 
+	    font-family: Verdana, Arial, Helvetica, sans-serif; 
+	    color: green;
+    }
+    
+    .b1 {
+	    background: green; 
+	    color: white; 
+	    font-size: 9pt; 
+    }
+    
+    .b2 {
+	    background: white; 
+	    color: green; 
+	    font-size: 9pt; 
+    }
+
+    .b3 {
+	    background: red; 
+	    color: white; 
+	    font-size: 9pt; 
+    }
+
+    .b4 { 
+    	display: inline;
+    }
+</style>
+	<script type="application/javascript">
+		function setEditMode(employee_id) {			
+			var employee_element = document.getElementById(employee_id);
+			var name_object = employee_element.children[0];
+			console.log(employee_element.children);
+			var employee_name = name_object.innerText;
+			var surname_object = employee_element.children[1];
+			var employee_surname = surname_object.innerText;
+			var edit_button_container = employee_element.children[2];
+
+			name_object.innerHTML = "<input type='text' value='"+employee_name+"'>";
+			surname_object.innerHTML = "<input type='text' value='" + employee_surname + "'>";
+
+			edit_button_container.innerHTML = "<button onclick=\"setViewMode('"+employee_id+"');\">Сохранить</button>";
+
+			return true;
+
+		}
+
+	</script>
+</head>-
+<body>
+	<h1>
+	Список сотрудников
+	</h1>
+	<ol>
+		<li id="1">
+			<div class="b4" id="1a"> 
+				Закиев
+			</div>
+			<div class="b4" id="1b">
+				Рустем
+			</div>
+			<div class="b4">
+				<button onClick="setEditMode('1')"; id="button_employee1">Редактировать</button>
+			</div>
+			<div class="b4">
+				<BUTTON onclick class="b3" myFunction()>
+					Удалить
+				</BUTTON>
+			</div>
+
+		</li>
+		<li>
+			<div class="b4">
+				<input name="textfield" type="text" value="Фамилия">
+			</div>
+		 	<div class="b4">
+		 		<input name="textfield" type="text" value="Имя">
+		 	</div>
+			<div class="b4">
+				<BUTTON class="b1">
+					Сохранить
+				</BUTTON>
+			</div>
+			<div class="b4">
+				<BUTTON>
+					Отмена
+				</BUTTON>
+			</div>
+		</li>
+		<div class="b4">
+			<BUTTON class="b2">Добавить сотрудника</BUTTON>
+		</div>
+	</ol>
+</body>
+</html>0
